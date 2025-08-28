@@ -58,7 +58,7 @@ def get_post_feed(id: int, limit: int = 10, db: Session = Depends(get_db)):
     return db.query(Feed).filter(Feed.post_id == id).order_by(desc(Feed.time)).limit(limit).all()
 
 @app.get("/post/recommendations/", response_model=List[PostGet])
-def get_post_recomended(id: int, limit: int = 10, db: Session = Depends(get_db)):
+def get_post_recomended(limit: int = 10, db: Session = Depends(get_db)):
 
     post_liked = db.query(Post, func.count(Feed.user_id)).select_from(Feed
                                                                       ).join(Post, Feed.post_id == Post.id).filter(
