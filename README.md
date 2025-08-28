@@ -50,14 +50,14 @@ like actions.
 Python ver. 3.12
 
 - There is a dockerfile and .dockerignore inside the project. It's supposed for web service demonstration at 
-https://startml_python_db-production.up.railway.app/, where you can try to send query and receive a response.
+https://startmlpythondb-production.up.railway.app, where you can try to send query and receive a response.
 
 The **app.py** is used for web service operation. Then endpoint function generates user tower embedding, normalizes and dots it with all item embeddings. The obtained list of scores 
 therefore helps to create a top of n posts. 
 
 Activation using `uvicorn app:app --port 8000`, or with another port. 
 Example of http query (GET method): 
-http://startml_python_db-production.up.railway.app/post/recommendations/?limit=5
+http://startmlpythondb-production.up.railway.app/post/recommendations/?limit=5
 
 Other modules - like **database.py**, **schema.py**, **table_feed.py**, **table_post.py** and **table_user.py** are used 
 for setting SQLAlchemy ORM and Pydantic data formats.
